@@ -9,7 +9,7 @@ import json
 from threading import Condition
 
 category_blueprint = Blueprint('category', __name__)
-repository = CategoryRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterCat')
+repository = CategoryRepository()
 create_category_usecase = CreateCategoryUseCase(repository=repository)
 
 condition = Condition()
