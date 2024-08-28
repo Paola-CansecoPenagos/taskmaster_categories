@@ -5,7 +5,7 @@ from infrastructure.services.jwt_service import decode_access_token
 
 get_category_blueprint = Blueprint('get_category', __name__)
 
-repository = CategoryRepository(connection_string='mongodb://localhost:27017/', db_name='taskMasterCat')
+repository = CategoryRepository()
 get_categories_usecase = GetCategoriesUseCase(repository=repository)
 
 @get_category_blueprint.route('/categories', methods=['GET'])
